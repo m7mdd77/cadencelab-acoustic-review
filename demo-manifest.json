@@ -1,0 +1,55 @@
+{
+  "format": "Actual application still captures with synthetic Windows narration; not continuous recording",
+  "segments": [
+    {
+      "title": "Scope and inputs",
+      "capture": "demo-inputs.png",
+      "seconds": 38,
+      "narrationSeconds": 35.32349206349206,
+      "narration": "This is CadenceLab, an AI-assisted acoustic comparison prototype for Multimodal AI Track C. This walkthrough uses actual application screenshots and synthetic Windows narration; it is not a continuous screen recording. Two WAV uploads are compared on an already aligned timeline. The optional English transcript enables genuine local forced alignment. Audio stays on the loopback server. CadenceLab measures signal deviations; it does not certify rhetorical skill."
+    },
+    {
+      "title": "Licensed data and stress gradient",
+      "capture": "technical-report-page-1.png",
+      "seconds": 41,
+      "narrationSeconds": 38.772834467120184,
+      "narration": "The reference recording is Kennedy at Rice University in nineteen sixty two, sourced from Wikimedia with its federal public-domain provenance recorded. Three disjoint twenty-second excerpts create development, validation and held-out signal tests. Each gets seven deterministic variants: three injected pauses, three local energy reductions, and one global gain control. SHA two fifty six hashes identify the audio. These are construction labels, not independent human judgments, and all excerpts share one speaker."
+    },
+    {
+      "title": "Actual completed comparison",
+      "capture": "demo-analysis.png",
+      "seconds": 41,
+      "narrationSeconds": 38.23083900226757,
+      "narration": "Here the actual application has analyzed the development excerpt against a one-second muted variant. The reference duration is nineteen point nine nine seconds. The shared transcript was loaded from a text file, and MFCC evidence was selected. The acoustic-fidelity score is a declared engineering rubric, not a validated delivery grade. Its penalties cover additional silence, excess normalized energy deviation and clipping. The displayed score must always be interpreted with the region evidence and methodological limits."
+    },
+    {
+      "title": "Temporal evidence and richer features",
+      "capture": "demo-features.png",
+      "seconds": 41,
+      "narrationSeconds": 38.52281179138322,
+      "narration": "The normalized energy comparison localizes the injected silence between six point three five and seven point three five seconds. The spectral view comes from genuine TorchAudio Kaldi MFCC extraction, thirteen coefficients with fifty-millisecond windows. C zero is excluded from the distance because energy is separately represented. The mean C one through C twelve distance is one point four zero three in this example. Microphone differences, noise and phonetics can also affect spectral distance, so it remains uncalibrated."
+    },
+    {
+      "title": "Genuine model alignment and uncertainty",
+      "capture": "demo-alignment.png",
+      "seconds": 40,
+      "narrationSeconds": 37.37310657596372,
+      "narration": "The word table is produced by local Wav2Vec2 emissions and TorchAudio CTC forced alignment, not by invented timestamps. Twenty-four actual corpus recordings were aligned. This excerpt yields forty-eight word spans. Muting speech can move model boundaries, because CTC still tries to place the supplied transcript. The interface warns that boundaries need review and that alignment does not time-warp the acoustic comparison. Independently timed practice recordings are therefore not currently supported."
+    },
+    {
+      "title": "Reproducible evaluation and limitations",
+      "capture": "technical-report-page-2.png",
+      "seconds": 41,
+      "narrationSeconds": 38.301043083900225,
+      "narration": "Evaluation recomputes predictions from checksum-verified WAV bytes. Same-kind regions require temporal intersection over union of at least one half and one-to-one matching. At the frozen six-decibel threshold, development precision is one and recall is zero point eight three three. Validation and held-out precision and recall are both zero point eight three three. The three-decibel intervention is missed, and fragmented stronger attenuation produces a false-positive region. These limitations are retained rather than tuning them away."
+    },
+    {
+      "title": "Export, tests and honest status",
+      "capture": "demo-limits.png",
+      "seconds": 48,
+      "narrationSeconds": 45.016825396825396,
+      "narration": "The report export contains measured frames, events, optional MFCC matrices, word alignment and the explicit rubric formula. Fifty-five local tests passed, and the real-speech browser upload and downloaded JSON were verified separately. The score uses forty-five percent silence, forty percent excess energy and fifteen percent clipping penalties; these weights are declared choices, not learned human ratings. Transcript review, independent-speaker validation and differently timed speech remain future work. This local walkthrough is not a claim of competition submission, acceptance or earnings."
+    }
+  ],
+  "durationSeconds": 290
+}

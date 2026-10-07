@@ -1,0 +1,5 @@
+# CPU builds used locally: torch 2.8.0+cpu and torchaudio 2.8.0+cpu.
+# 2.8 is pinned because forced_align is removed in 2.9.
+numpy==2.3.5
+torch==2.8.0
+torchaudio==2.8.0

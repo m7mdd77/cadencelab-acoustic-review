@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CadenceLab</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<header><strong>CadenceLab</strong><span>Acoustic review</span><span class="local">Local only</span></header>
+<main>
+<form id="inputs">
+<div><label for="baseline">Baseline WAV</label><input id="baseline" type="file" accept=".wav,audio/wav" required><audio id="baseline-player" controls></audio></div>
+<div><label for="practice">Practice WAV</label><input id="practice" type="file" accept=".wav,audio/wav" required><audio id="practice-player" controls></audio></div>
+<div class="threshold"><label for="threshold">Energy delta</label><select id="threshold"><option value="3">3 dB</option><option value="6" selected>6 dB</option><option value="9">9 dB</option><option value="12">12 dB</option></select><button id="analyze" type="submit">Analyze</button></div>
+<label class="feature-option"><input id="mfcc" type="checkbox"> MFCC evidence (16 kHz, up to 30 s)</label>
+<div class="transcript-input"><label for="transcript-file">Transcript TXT</label><input id="transcript-file" type="file" accept=".txt,text/plain"><label for="transcript">Shared English transcript (optional, clips up to 30 s)</label><textarea id="transcript" maxlength="4000" rows="3"></textarea></div>
+</form>
+<div class="actions"><button id="fixture" type="button">Synthetic signal fixture</button><button id="export" type="button" disabled>Export report</button><span id="status" role="status">No recordings analyzed</span></div>
+<section id="report" hidden>
+<div class="summary"><h1>Comparison timeline</h1><span id="duration"></span><span id="count"></span><span id="source"></span><span id="rubric-score"></span></div>
+<div class="legend"><span class="baseline">Baseline energy</span><span class="practice">Practice energy</span></div>
+<canvas id="timeline" height="280" aria-label="Baseline and practice normalized energy over time"></canvas>
+<section id="spectral" hidden><h2>Spectral difference</h2><span id="spectral-summary"></span><canvas id="mfcc-timeline" height="160" aria-label="MFCC spectral difference over time"></canvas></section>
+<section id="alignment" hidden><h2>Word alignment</h2><span id="alignment-status"></span><div class="table-wrap"><table><thead><tr><th>Word</th><th>Baseline</th><th>Practice</th><th>Start shift</th></tr></thead><tbody id="words"></tbody></table></div></section>
+<div class="table-wrap"><table><thead><tr><th>Region</th><th>Time</th><th>Measured evidence</th></tr></thead><tbody id="events"></tbody></table></div>
+<details open><summary>Method limits</summary><ul id="limits"></ul></details>
+</section>
+</main><script type="module" src="/app.mjs"></script>
+</body></html>
